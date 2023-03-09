@@ -1,0 +1,7 @@
+export const ADD_SURVEY = 'ADD_SURVEY'
+export const REMOVE_SURVEY = 'REMOVE_SURVEY'
+export const EDIT_SURVEY = 'EDIT_SURVEY'
+export const ADD_CONTENT ='ADD_CONTENT'
+export const REMOVE_CONTENT = 'REMOVE_CONTENT'
+export const EDIT_CONTENT = 'EDIT_CONTENT'
+export const GET_USER = 'GET_USER'

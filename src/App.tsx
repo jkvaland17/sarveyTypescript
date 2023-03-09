@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./component/Home";
+import Signup from "./component/Signup";
+import Login from "./component/Login";
+import Workplace from "./component/Workplace";
+import Create from "./component/Create";
+import { Provider } from "react-redux";
+import store from "./Redux/store";
+import User from "./component/User";
+import Thanks from "./component/Thanks";
+import "./style.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/workplace" element={<Workplace />} />
+            <Route path="/create/:id" element={<Create />} />
+            <Route path="/user/:id/:uid" element={<User />} />
+            <Route path="/thanks/:id/:uid" element={<Thanks />} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
