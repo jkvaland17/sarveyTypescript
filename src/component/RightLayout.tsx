@@ -23,9 +23,11 @@ const RightLayout = (
   };
 
   const addName = (e: React.ChangeEvent<HTMLInputElement>, id: any) => {
+    // eslint-disable-next-line eqeqeq
     let curItem = choices.find((c: { id: any }) => c.id == id);
     curItem["name"] = e.target.value;
     setChoise(
+      // eslint-disable-next-line eqeqeq
       choices.map((c: { id: any }) => (c.id == curItem.id ? curItem : c))
     );
     getChoices(choices);

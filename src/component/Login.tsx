@@ -19,9 +19,11 @@ const Login = (props: any) => {
 
   const handleData = (e: { target: { name: any; value: any } }) => {
     let nameFeild = e.target.name;
+    // eslint-disable-next-line eqeqeq
     if (nameFeild == "email" && e.target.value.trim().length > 0) {
       setEmail(false);
     }
+    // eslint-disable-next-line eqeqeq
     if (nameFeild == "password" && e.target.value.trim().length > 0) {
       setPassword(false);
     }

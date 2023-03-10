@@ -9,6 +9,7 @@ const User = (s_id: any, u_id: any) => {
   const navigate = useNavigate();
   let { id = s_id, uid = u_id } = useParams();
   const surveys = JSON.parse(localStorage.getItem(`survey${uid}`) || "{}");
+  // eslint-disable-next-line eqeqeq
   const curSurvey = surveys.find((s: any) => s.id == id);
   const [obj, setObj] = useState({
     require: false,

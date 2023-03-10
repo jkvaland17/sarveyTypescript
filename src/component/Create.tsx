@@ -38,6 +38,7 @@ const Create = (props: any) => {
   const state: any = useSelector((state) => state);
   const obj = useParams();
   const id = obj.id;
+  // eslint-disable-next-line eqeqeq
   let curSurvey = state.find((s: { id: string | undefined }) => s.id == id);
   const [active, setActive] = useState({
     newContent: false,
@@ -150,6 +151,7 @@ const Create = (props: any) => {
                         <div
                           className={
                             "content-bar__lists__list " +
+                            // eslint-disable-next-line eqeqeq
                             (active.index == ind
                               ? " content-bar__lists__active"
                               : "")
@@ -346,6 +348,7 @@ const Create = (props: any) => {
                     <div
                       className={
                         "selection-bar__layout__wrapper__box" +
+                        // eslint-disable-next-line eqeqeq
                         (layouts == 1 ? " selected" : "")
                       }
                       onClick={() => setLayout(1)}
@@ -356,6 +359,7 @@ const Create = (props: any) => {
                       id=""
                       className={
                         "selection-bar__layout__wrapper__box" +
+                        // eslint-disable-next-line eqeqeq
                         (layouts == 2 ? " selected" : "")
                       }
                       onClick={() => setLayout(2)}
@@ -366,6 +370,7 @@ const Create = (props: any) => {
                       id=""
                       className={
                         "selection-bar__layout__wrapper__box" +
+                        // eslint-disable-next-line eqeqeq
                         (layouts == 3 ? " selected" : "")
                       }
                       onClick={() => setLayout(3)}

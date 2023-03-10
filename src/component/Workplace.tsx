@@ -5,14 +5,30 @@ import { AiFillDelete } from "react-icons/ai";
 import { addSurvey, removeSurvey } from "../Redux/todoAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { RootState } from '../react-app-env';
 
 const Workplace = (props: any) => {
-  let surveys = useSelector((state) => state);
+  let surveys = useSelector((state:RootState) => state);
   let dispatch = useDispatch();
   let navigator = useNavigate();
   const [api, contextHolder] = notification.useNotification();
 
-  const initSurvey = {
+  interface Resource {
+    id: any;
+    name: string;
+    content: [
+      {
+        id: number;
+        type: string;
+        description: string;
+        item: [];
+        require: boolean;
+      }
+    ];
+    img: string;
+    layout: number;
+  }
+  const initSurvey: Resource = {
     id: null,
     name: "My Survey",
     content: [
@@ -27,7 +43,6 @@ const Workplace = (props: any) => {
     img: "https://surveyagency.netlify.app/images/bg-img.jpg",
     layout: 1,
   };
- 
 
   const addData = (type: string) => {
     initSurvey.id = Math.floor(Math.random() * 100);

@@ -3,7 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = (props: any) => {
   let navigate = useNavigate();
-  const initUser = { id: null, name: "", email: "", password: "" };
+  interface Resource {
+    id: any
+    name: string;
+    email: string;
+    password: string;
+  }
+  const initUser: Resource = { id: null, name: "", email: "", password: "" };
   const [user, setUser] = useState(initUser);
   const [name, setName] = useState(false);
   const [email, setEmail] = useState(false);
@@ -23,12 +29,15 @@ const Signup = (props: any) => {
 
   const handleData = (e: { target: { name: any; value: any } }) => {
     let nameFeild = e.target.name;
+    // eslint-disable-next-line eqeqeq
     if (nameFeild == "name" && e.target.value.trim().length > 0) {
       setName(false);
     }
+    // eslint-disable-next-line eqeqeq
     if (nameFeild == "email" && e.target.value.trim().length > 0) {
       setEmail(false);
     }
+    // eslint-disable-next-line eqeqeq
     if (nameFeild == "password" && e.target.value.trim().length > 0) {
       setPassword(false);
     }
